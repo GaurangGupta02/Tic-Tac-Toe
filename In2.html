@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="In2.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <button id="theme-toggle">🌙 Dark Mode</button>
+
+  <div id="start-menu">
+    <h1>Tic-Tac-Toe</h1>
+    <p>Select game mode:</p>
+    <div class="mode-select">
+      <button id="pvp" class="mode-btn">Player vs Player</button>
+      <button id="pvc" class="mode-btn">Player vs Computer</button>
+      <button id="online" class="mode-btn">Online Multiplayer</button>
+    </div>
+  </div>
+
+  <div id="room-menu" class="hidden">
+    <h1>Online Multiplayer</h1>
+    <div class="btn-container">
+      <button id="create-room-btn" class="room-btn">Create Room</button>
+      <button id="join-room-btn" class="room-btn">Join Room</button>
+    </div>
+    <button id="back-to-menu" class="action-btn" style="margin-top: 20px; background: var(--danger-color); color: white;">Back to Menu</button>
+  </div>
+
+  <div id="room-create" class="hidden">
+    <h1>Create Room</h1>
+    <div class="room-input">
+      <input type="number" id="room-code-input" placeholder="Enter 4-digit code" min="1000" max="9999" maxlength="4">
+    </div>
+    <button id="generate-code" class="room-btn">Generate Random Code</button>
+    <div class="btn-container">
+      <button id="create-room" class="room-btn">Create</button>
+      <button id="cancel-create" class="action-btn" style="background: var(--danger-color); color: white;">Cancel</button>
+    </div>
+  </div>
+
+  <div id="room-join" class="hidden">
+    <h1>Join Room</h1>
+    <div class="room-input">
+      <input type="number" id="room-code" placeholder="Enter 4-digit code" min="1000" max="9999" maxlength="4">
+    </div>
+    <div class="btn-container">
+      <button id="connect-room" class="room-btn">Connect</button>
+      <button id="cancel-join" class="action-btn" style="background: var(--danger-color); color: white;">Cancel</button>
+    </div>
+  </div>
+
+  <div id="room-waiting" class="hidden">
+    <h1>Room Code: <span id="display-room-code" class="code-display"></span></h1>
+    <div class="player-info">
+      <div class="player-x">Player X: <span id="player-x-name">You</span></div>
+      <div class="player-o">Player O: <span id="player-o-name">Waiting...</span></div>
+    </div>
+    <div class="waiting-message" id="waiting-message">Waiting for another player to join...</div>
+    <button id="cancel-waiting" class="action-btn" style="margin-top: 20px; background: var(--danger-color); color: white;">Cancel</button>
+  </div>
+
+  <div id="game-container" class="hidden">
+    <h1 id="game-title">Online Tic-Tac-Toe</h1>
+    <div class="player-info">
+      <div class="player-x">Player X: <span id="game-player-x"></span></div>
+      <div class="player-o">Player O: <span id="game-player-o"></span></div>
+    </div>
+    <div id="status">Player X's Turn</div>
+    <div id="board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+    <div class="btn-container">
+      <button id="reset" class="action-btn">Reset Game</button>
+      <button id="back" class="action-btn">Back to Menu</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+  <script src="In2.js"></script>
+  <script>
+    
+  </script>
+</body>
+</html>
